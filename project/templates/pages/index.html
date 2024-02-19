@@ -1,0 +1,555 @@
+{%load static%}
+
+{%block content%}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'fontawesome/all.css' %}">
+    <link rel="stylesheet" href="{% static 'fontawesome/all.min.css' %}">
+</head>
+
+<body dir="rtl">
+    <div class="bodyOverlay"></div>
+    <div class="con">
+        <nav>
+            <div class="logo">
+                <img src="{% static 'images/logo.png' %}" alt="">
+            </div>
+            <ol>
+                <a href="#home">
+                <li>
+                        الصفحة الرئيسية
+                        <i class="fa-solid fa-house"></i>
+                    </li>
+                </a>
+                <a href="#lecs">
+                <li>
+                        محاضرات
+                        <i class="fa-solid fa-film"></i>
+                    </li>
+                </a>
+                <a href="#artics">
+                <li>
+                        مقالات
+                        <i class="fa-solid fa-newspaper"></i>
+                    </li>
+                </a>
+                <a href="#teacher">
+                <li>
+                        الاساتذة
+                        <i class="fa-solid fa-person-chalkboard"></i>
+                    </li>
+                </a>
+                <a href="#about">
+                <li>
+                        عن الحوزة
+                        <i class="fa-solid fa-school"></i>
+                    </li>
+                </a>
+            </ol>
+            <div class="menuBar">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="close">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        </nav>
+
+        <div class="con-nav" id="home">
+            <div class="overlay"></div>
+            <div class="welcom">
+                <h1>أهلاً وسهلاً بكم</h1>
+                <h3>في حوزة الإمام جعفر الصادق</h3>
+            </div>
+            <div class="down">
+                <i class="fa-solid fa-angles-down"></i>
+            </div>
+        </div>
+        <!-- lecs -->
+        <div class="lecs" id="lecs">
+            <div class="conatiner">
+                <div class="title">
+                    <h1>
+                        المحاضرات
+                    </h1>
+                </div>
+                <div class="row" dir="ltr">
+                    <div class="back">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </div>
+                    <div class="cards">
+                        {% for l in lec %}
+                        <div class="card">
+                            <img src="{{l.image.url}}" alt="alt">
+                            <div class="desc">
+                                <div class="videos">
+                                    <div class="nums">0</div>
+                                    <i class="fa-solid fa-film"></i>
+                                </div>
+                                <h4>
+                                    <a href="#lec">
+                                        {{l.name}}
+                                    </a>
+                                </h4>
+                            </div>
+                        </div>
+                        {%endfor%}
+                    </div>
+                    <div class="next">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- articles -->
+        <div class="articles" id="artics">
+            <div class="conatiner">
+                <div class="title">
+                    <h1>المقالات</h1>
+                </div>
+                <div class="cards">
+                    <div class="card">
+                        <img src="static/images/lec1.jpg" alt="alt">
+                        <div class="desc">
+                            <div class="artcTitle">
+                                <div class="views">
+                                    <div class="nums">100</div>
+                                    <i class="fa-regular fa-eye"></i>
+                                </div>
+                                <h4>
+                                    <a href="#lec">
+                                        المنطق
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="artcAbout">
+                                عن ماذا تتكلم المقالة
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="static/images/lec2.jpg" alt="alt">
+                        <div class="desc">
+                            <div class="artcTitle">
+                                <div class="views">
+                                    <div class="nums">100</div>
+                                    <i class="fa-regular fa-eye"></i>
+                                </div>
+                                <h4>
+                                    <a href="#lec">
+                                        المنطق
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="artcAbout">
+                                عن ماذا تتكلم المقالة
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="static/images/lec3.png" alt="alt">
+                        <div class="desc">
+                            <div class="artcTitle">
+                                <div class="views">
+                                    <div class="nums">100</div>
+                                    <i class="fa-regular fa-eye"></i>
+                                </div>
+                                <h4>
+                                    <a href="#lec">
+                                        المنطق
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="artcAbout">
+                                عن ماذا تتكلم المقالة
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="static/images/navBck.jpg" alt="alt">
+                        <div class="desc">
+                            <div class="artcTitle">
+                                <div class="views">
+                                    <div class="nums">100</div>
+                                    <i class="fa-regular fa-eye"></i>
+                                </div>
+                                <h4>
+                                    <a href="#lec">
+                                        المنطق
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="artcAbout">
+                                عن ماذا تتكلم المقالة
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="static/images/rgq4p9.jpg" alt="alt">
+                        <div class="desc">
+                            <div class="artcTitle">
+                                <div class="views">
+                                    <div class="nums">100</div>
+                                    <i class="fa-regular fa-eye"></i>
+                                </div>
+                                <h4>
+                                    <a href="#lec">
+                                        المنطق
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="artcAbout">
+                                عن ماذا تتكلم المقالة
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="static/images/rgq4p9.jpg" alt="alt">
+                        <div class="desc">
+                            <div class="artcTitle">
+                                <div class="views">
+                                    <div class="nums">100</div>
+                                    <i class="fa-regular fa-eye"></i>
+                                </div>
+                                <h4>
+                                    <a href="#lec">
+                                        المنطق
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="artcAbout">
+                                عن ماذا تتكلم المقالة
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="static/images/rgq4p9.jpg" alt="alt">
+                        <div class="desc">
+                            <div class="artcTitle">
+                                <div class="views">
+                                    <div class="nums">100</div>
+                                    <i class="fa-regular fa-eye"></i>
+                                </div>
+                                <h4>
+                                    <a href="#lec">
+                                        المنطق
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="artcAbout">
+                                عن ماذا تتكلم المقالة
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="static/images/rgq4p9.jpg" alt="alt">
+                        <div class="desc">
+                            <div class="artcTitle">
+                                <div class="views">
+                                    <div class="nums">100</div>
+                                    <i class="fa-regular fa-eye"></i>
+                                </div>
+                                <h4>
+                                    <a href="#lec">
+                                        المنطق
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="artcAbout">
+                                عن ماذا تتكلم المقالة
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="static/images/rgq4p9.jpg" alt="alt">
+                        <div class="desc">
+                            <div class="artcTitle">
+                                <div class="views">
+                                    <div class="nums">100</div>
+                                    <i class="fa-regular fa-eye"></i>
+                                </div>
+                                <h4>
+                                    <a href="#lec">
+                                        المنطق
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="artcAbout">
+                                عن ماذا تتكلم المقالة
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="static/images/rgq4p9.jpg" alt="alt">
+                        <div class="desc">
+                            <div class="artcTitle">
+                                <div class="views">
+                                    <div class="nums">100</div>
+                                    <i class="fa-regular fa-eye"></i>
+                                </div>
+                                <h4>
+                                    <a href="#lec">
+                                        المنطق
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="artcAbout">
+                                عن ماذا تتكلم المقالة
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="static/images/rgq4p9.jpg" alt="alt">
+                        <div class="desc">
+                            <div class="artcTitle">
+                                <div class="views">
+                                    <div class="nums">100</div>
+                                    <i class="fa-regular fa-eye"></i>
+                                </div>
+                                <h4>
+                                    <a href="#lec">
+                                        المنطق
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="artcAbout">
+                                عن ماذا تتكلم المقالة
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="static/images/rgq4p9.jpg" alt="alt">
+                        <div class="desc">
+                            <div class="artcTitle">
+                                <div class="views">
+                                    <div class="nums">100</div>
+                                    <i class="fa-regular fa-eye"></i>
+                                </div>
+                                <h4>
+                                    <a href="#lec">
+                                        المنطق
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="artcAbout">
+                                عن ماذا تتكلم المقالة
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="static/images/rgq4p9.jpg" alt="alt">
+                        <div class="desc">
+                            <div class="artcTitle">
+                                <div class="views">
+                                    <div class="nums">100</div>
+                                    <i class="fa-regular fa-eye"></i>
+                                </div>
+                                <h4>
+                                    <a href="#lec">
+                                        المنطق
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="artcAbout">
+                                عن ماذا تتكلم المقالة
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="static/images/rgq4p9.jpg" alt="alt">
+                        <div class="desc">
+                            <div class="artcTitle">
+                                <div class="views">
+                                    <div class="nums">100</div>
+                                    <i class="fa-regular fa-eye"></i>
+                                </div>
+                                <h4>
+                                    <a href="#lec">
+                                        المنطق
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="artcAbout">
+                                عن ماذا تتكلم المقالة
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="static/images/rgq4p9.jpg" alt="alt">
+                        <div class="desc">
+                            <div class="artcTitle">
+                                <div class="views">
+                                    <div class="nums">100</div>
+                                    <i class="fa-regular fa-eye"></i>
+                                </div>
+                                <h4>
+                                    <a href="#lec">
+                                        المنطق
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="artcAbout">
+                                عن ماذا تتكلم المقالة
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="static/images/rgq4p9.jpg" alt="alt">
+                        <div class="desc">
+                            <div class="artcTitle">
+                                <div class="views">
+                                    <div class="nums">100</div>
+                                    <i class="fa-regular fa-eye"></i>
+                                </div>
+                                <h4>
+                                    <a href="#lec">
+                                        المنطق
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="artcAbout">
+                                عن ماذا تتكلم المقالة
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="more">
+                    <a href="#lecs">أقرأ المزيد</a>
+                </div>
+            </div>
+        </div>
+        <!-- teachers -->
+        <div class="teacher" id="teacher">
+            <div class="conatiner">
+                <div class="title">
+                    <h1>الاساتذة</h1>
+                </div>
+                <ul class="teachersCon">
+                    <li>
+                        <div class="pic">
+                            <img src="static/images/teacher1.jpg" alt="">
+                        </div>
+                        <div class="name">
+                            الشيخ صباح
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pic">
+                            <img src="static/images/teacher1.jpg" alt="">
+                        </div>
+                        <div class="name">
+                            الشيخ صباح
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pic">
+                            <img src="static/images/teacher1.jpg" alt="">
+                        </div>
+                        <div class="name">
+                            الشيخ صباح
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pic">
+                            <img src="static/images/teacher1.jpg" alt="">
+                        </div>
+                        <div class="name">
+                            الشيخ صباح
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pic">
+                            <img src="static/images/teacher1.jpg" alt="">
+                        </div>
+                        <div class="name">
+                            الشيخ صباح
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pic">
+                            <img src="static/images/teacher1.jpg" alt="">
+                        </div>
+                        <div class="name">
+                            الشيخ صباح
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- about -->
+        <div class="about" id="about">
+            <div class="conatiner">
+                <div class="title">
+                    <h1>عن الحوزة</h1>
+                </div>
+                <div class="aboutCon">
+                    <div class="disc">
+                        <h1>مدرسة الامام جعفر الصادق</h1>
+                        <p>
+                            وهي مدرسة حوزوية تعنى بتدريس العلوم الدينية المختلفة في الفقه والاصول والمنطق وعلم الكلام
+                            والتفسير والحديث وما الى ذلك
+                        </p>
+                    </div>
+                    <div class="sliderPics">
+                        <video type="video/mp4" autoplay muted loop controls>
+                            <source src="{% static 'videos/aboutHawza.mp4' %}"/>
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer -->
+        <footer>
+            <div class="conatiner">
+                <div class="footerCon">
+                    <div>
+                        <h1>
+                            حوزة الامام جعفر الصادق
+                        </h1>
+                        <div class="social">
+                            <ul>
+                                <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                                <li><a href="https://t.me/moh1611"><i class="fa-brands fa-telegram"></i></a></li>
+                                <li><a href="https://www.youtube.com/@dar-alislam"><i
+                                            class="fa-brands fa-youtube"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div class="loc">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <p>شارع الكوفة - جامعة الامام الصادق - مؤسسة دار الاسلام</p>
+                        </div>
+                        <div class="workTime">
+                            <i class="fa-solid fa-business-time"></i>
+                            <p>ص8:00 - م3:00</p>
+                        </div>
+                        <div class="contact">
+                            <i class="fa-solid fa-phone-volume"></i>
+                            <div class="nums">
+                                <p>+964 772 879 6186</p>
+                                <p>+964 782 683 3003</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="logo">
+                        <img src="{% static 'images/logo.png' %}" alt="">
+                    </div> -->
+                </div>
+        </footer>
+    </div>
+    </div>
+    </div>
+    <script src="{% static 'scripts/main.js' %}"></script>
+    <script src="{% static 'fontawesome/all.js' %}"></script>
+    <script src="{%static 'fontawesome/all.min.js' %}"></script>
+</body>
+
+</html>
+{% endblock content %}
