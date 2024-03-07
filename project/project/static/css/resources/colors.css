@@ -1,0 +1,8 @@
+:root { 
+    --mainColor: rgb(0, 123, 255);
+    --activeColor: rgba(0, 123, 255, 0.8);
+    --secColor: #eee;
+    --secondaryColor: #777;
+    --time:0.5s;
+    --main-pad:40px; 
+}

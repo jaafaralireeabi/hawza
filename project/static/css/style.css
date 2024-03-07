@@ -1,15 +1,7 @@
-:root { 
-    --mainColor: rgb(0, 123, 255);
-    --activeColor: rgba(0, 123, 255, 0.8);
-    --secColor: #eee;
-    --secondaryColor: #777;
-    --time:0.5s;
-    --main-pad:40px; 
-}
-@font-face {
-    font-family: cairo;
-    src: url("../fonts/Cairo-VariableFont_slnt\,wght.ttf");
-}
+@import url("resources/colors.css");
+@import url("resources/fonts.css");
+@import url("resources/components.css");
+
 html {
     scroll-behavior: smooth;
 }
@@ -21,66 +13,6 @@ html {
 body{
     font-family: "cairo", serif;
 }
-
-/* overlay component */
-.overlay {
-    position: absolute;
-    left: 0;
-    top: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    width: 100%;
-    height: 100vh;
-    z-index: 100;
-}
-.bodyOverlay {
-    position: fixed;
-    left: 0;
-    top: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    width: 100%;
-    height: 100vh;
-    z-index: 350;
-    display: none;
-}
-/*  */
-/* container */
-.conatiner {
-    margin: 0 var(--main-pad);
-
-}
-/*  */
-/* title */
-.title {
-    position: relative;
-    text-align: center;
-    width: 100%;
-    background-color: var(--mainColor);
-    color: #fff;
-    margin: 0 50%;
-    margin-bottom: 40px;
-    -o-transform: translateX(50%);
-    -webkit-transform: translateX(50%);
-    -moz-transform: translateX(50%);
-    -ms-transform: translateX(50%);
-    transform: translateX(50%);
-    -o-border-radius: 50px;
-    -webkit-border-radius: 50px;
-    -moz-border-radius: 50px;
-    -ms-border-radius: 50px;
-    border-radius: 50px;
-    padding: 20px 10px;
-    -o-transition: var(--time);
-    -webkit-transition: var(--time);
-    -moz-transition: var(--time);
-    -ms-transition: var(--time);
-    transition: var(--time);
-}
-/*  */
-/* a */
-a {
-    text-decoration: none;
-}
-/*  */
 
 /* nav */
 nav {

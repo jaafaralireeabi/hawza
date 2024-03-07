@@ -10,6 +10,7 @@ let menuBar = document.querySelector("nav .menuBar");
 let closeMark = document.querySelector("nav .close");
 let olNav = document.querySelector("nav ol");
 let liNav = document.querySelectorAll("nav ol a");
+let lecLinks = document.querySelectorAll("#lecLink");
 
 const bodyOverlay = document.querySelector(".bodyOverlay");
 
@@ -53,6 +54,7 @@ function fullNav() {
     olNav.classList.toggle("show");
 }
 
+// in folder lecs
 
 // HTTP requset
 function send_req(url) {
@@ -69,9 +71,67 @@ function send_req(url) {
 }
 
 let names = send_req("respon");
-names = names["data"];
 
 names.forEach((e, i) => { names[i] = e["name"] });
 
+let hrefNames = [];
+names.forEach(e=>{
+    hrefNames.push(e.replaceAll(" ","_"));
+});
+
+
+lecLinks.forEach((e,i)=>{
+    e.href=hrefNames[i];
+});
 
 // names.forEach(e => { createDoc(e); });
+console.log(1);
+
+
+
+//test node js
+// http = require('http')
+// const PORT = 8000;
+
+// // server create
+// const server = http.createServer((req, res) => {
+//    if (req.url === "/") {
+//       res.write("This is home page.");
+//       res.end();
+//    } else if (req.url === "/about" && req.method === "GET") {
+//       res.write("This is about page.");
+//       res.end();
+//    } else {
+//       res.write("Not Found!");
+//       res.end();
+//    }
+// });
+
+// // server listen port
+// server.listen(PORT);
+
+// console.log(`Server is running on PORT: ${PORT}`);
+
+// Content to write into the file
+var fileContent = "This is the content of the file.";
+
+// Create a Blob with the content
+var blob = new Blob([fileContent], { type: 'text/plain' });
+
+// Create a file name
+var fileName = 'example.txt';
+
+// Create a link element
+var a = document.createElement('a');
+a.href = window.URL.createObjectURL(blob);
+a.download = fileName;
+
+// Append the link to the body
+document.body.appendChild(a);
+
+// Click the link to trigger the download
+a.click();
+
+// Cleanup
+window.URL.revokeObjectURL(a.href);
+document.body.removeChild(a);

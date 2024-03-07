@@ -30,9 +30,11 @@ class Lec(models.Model):
     def __init__(self, *args: Any, **kwargs: Any) -> None:
         super().__init__(*args, **kwargs)
         pF = "templates/pages/"
+        print(self.image)
         #clear folder
         clearFolder(pF+"lecs")
         
+
         content ="""{%load static%}
     {%block content%}
         <!DOCTYPE html>
@@ -40,18 +42,23 @@ class Lec(models.Model):
                 <head>
                     <meta charset="UTF-8">
                     <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Document</title>    
-                    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+                    <link rel="stylesheet" href="{% static 'css/lecStyle.css' %}">
                     <link rel="stylesheet" href="{% static 'fontawesome/all.css' %}">
                     <link rel="stylesheet" href="{% static 'fontawesome/all.min.css' %}">
                 </head>
                 <body>
                     <div class="con">
+                        <div class="landing">
+                            <div class="overlay"></div>
+                            <div class="lecsTitle">
+                                <h1>السيرة</h1>
+                            </div>
+                        </div>
                     </div>
-                    <static src="main.js"></static>
+                    <static src="lec.js"></static>
                 </body>
                 </html>
     {%endblock content%}"""
-        
         # create htmlDocs files and folder
         if not path.isdir(pF+"lecs"):
             createFolder(pF,"lecs")
@@ -75,3 +82,6 @@ class lecVideo(models.Model):
         verbose_name = 'فيديوات المحاضرات'
 
 
+@receiver(pre_save,sender=lecVideo)
+def setVideoInLec(sender,instances,**kwargs):
+    return 0
