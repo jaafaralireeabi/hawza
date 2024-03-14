@@ -7,7 +7,9 @@ from json import dumps
 def index(request):
     data = Lec.objects.all() 
     return render(request,"pages/index.html",{"lec":data})
-
+def test(request):
+    data = Lec.objects.all() 
+    return render(request,"pages/test.html",{"lec":data})
 def resopn(request):
     data = list(Lec.objects.values("name"))
     

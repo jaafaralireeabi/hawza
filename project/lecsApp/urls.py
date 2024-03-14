@@ -1,12 +1,13 @@
 import os
 from django.urls import path,include
 from . import views
-from .models import Lec
+from .models import Lec,lecVideo
 
 
 urlpatterns = [
     path('',views.index,name='index'),
     path('respon',views.resopn,name='respon'),
+    path('test',views.test,name='test'),
 ]
 pF = "templates/pages/"
 if os.path.isdir(pF+"lecs"):
