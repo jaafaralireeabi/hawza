@@ -76,24 +76,6 @@ WSGI_APPLICATION = 'project.wsgi.app'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'hawza',
-#         'USER': 'root',
-#         'PASSWORD': 'admin',
-#         'HOST':'localhost',
-#         'PORT':'3306',
-#     }
-# }
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -104,17 +86,6 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-
-# DATABASES = {
-#         'default': {
-#             'ENGINE': 'djongo',
-#             'NAME': 'school',
-#             'ENFORCE_SCHEMA': False,
-#             'CLIENT': {
-#                 'host': 'mongodb://jaafar_admin:jaafar2024@clusterAdmin/school?retryWrites=true&w=majority'
-#             }  
-#         }
-# }
 
 
 # Password validation
@@ -152,15 +123,19 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 
-STATIC_ROOT=os.path.join(BASE_DIR,'static')
-STATIC_URL = '/static/'
+# STATIC_URL = '/static/'
+# STATIC_ROOT=os.path.join(BASE_DIR,'static')
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR,'project/static'),
+# ]
+
+STATIC_URL = 'static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles_build','static') 
+STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
 
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,'project/static'),
-]
